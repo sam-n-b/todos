@@ -5,6 +5,9 @@
   "repository": "https://github.com/sam-n-b/todos.git",
   "author": "<Sam-Bartos> <<sambartos@gmail.com>>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "sqlite3": "^4.0.6"
