@@ -1,25 +1,17 @@
 const express = require('express')
 const router = express.Router()
-
+const {getTodos} = require('../db/todos')
 
 //GET /api/v1/todos
 router.get('/', (req, res)=>{
-res.json([
-    {
-        task: "dont commit console logs",
-        priority: 5,
-        category: 'code',
-        is_complete: false,
-        due_at: 111
-    },
-    {
-        task: "talk to rubber ducky",
-        priority: 3,
-        category: 'code',
-        is_complete: false,
-        due_at: 123  
-    }
-])
+    getTodos()
+    .then(todos => {
+        res.json(todos)
+    })
+    .catch(err =>{
+        console.log(err)
+        res.setStatus(500).json({error: 'an error has occured'})
+    })
 })
 
 
