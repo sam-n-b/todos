@@ -54,7 +54,6 @@ router.get('/completed/:completed', (req, res)=>{
 //POST /api/v1/todos
 
 router.post('/', (req,res)=>{
-    console.log(req.body)
     const todos = req.body
     createTodos(todos)
     .then(res.json({ok: 'ok'}))
