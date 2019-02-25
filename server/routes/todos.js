@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {getTodos, getTodosByPriority, getTodosByCategory, getTodosByCompleted} = require('../db/todos')
+const {getTodos, getTodosByPriority, getTodosByCategory, getTodosByCompleted, createTodos} = require('../db/todos')
 
 //GET /api/v1/todos
 router.get('/', (req, res)=>{
@@ -51,4 +51,13 @@ router.get('/completed/:completed', (req, res)=>{
 })
 
 
+//POST /api/v1/todos
+
+router.post('/', (req,res)=>{
+    console.log(req.body)
+    //res.json({id:6})
+    const todos = req.body
+    createTodos(todos)
+    .then(res.json({ok: 'ok'}))
+})
 module.exports = router

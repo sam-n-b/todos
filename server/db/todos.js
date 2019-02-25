@@ -21,6 +21,7 @@ function getTodosByCategory(category, testDb){
 }
 
 function getTodosByCompleted(completed, testDb){
+    
     const db = testDb || connection
     return db('todos').where('todos.is_complete', completed)
 }
