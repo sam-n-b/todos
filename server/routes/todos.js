@@ -55,7 +55,6 @@ router.get('/completed/:completed', (req, res)=>{
 
 router.post('/', (req,res)=>{
     console.log(req.body)
-    //res.json({id:6})
     const todos = req.body
     createTodos(todos)
     .then(res.json({ok: 'ok'}))
