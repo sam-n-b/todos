@@ -5,6 +5,7 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 import{getTodos} from '../actions'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
+import Nav from './Nav'
 
 
 class App extends React.Component{
@@ -20,8 +21,9 @@ render(){
     return(
         <Router>
             <div>
-            <TodoList/>
+            <Nav/>
             <Route path='/forms' component={TodoForm}/>
+            <Route exact path = '/' component={TodoList}/>
             </div>
         </Router>
     )
