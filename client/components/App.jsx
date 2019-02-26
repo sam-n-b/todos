@@ -1,7 +1,10 @@
 import React from 'react'
-import TodoList from './TodoList'
 import {connect} from 'react-redux'
+import {HashRouter as Router, Route} from 'react-router-dom'
+
 import{getTodos} from '../actions'
+import TodoForm from './TodoForm'
+import TodoList from './TodoList'
 
 
 class App extends React.Component{
@@ -15,7 +18,12 @@ componentDidMount(){
 
 render(){
     return(
-        <TodoList/>
+        <Router>
+            <div>
+            <TodoList/>
+            <Route path='/forms' component={TodoForm}/>
+            </div>
+        </Router>
     )
 }
 }

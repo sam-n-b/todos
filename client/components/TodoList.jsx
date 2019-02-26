@@ -1,16 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import TodoItem from './TodoItem'
 
 class TodoList extends React.Component{
 constructor(props){
     super(props)
 }
 render(){
+    const todos = this.props.todos
     
     return(
-        <p>todoList
-            {console.log(this.props.todos)}
-        </p>
+        todos.map((item,i)=>{
+            return (
+            <div>
+            <TodoItem key ={i} todo={item}/>
+            </div>
+            )
+        })
     )
 }
 }
