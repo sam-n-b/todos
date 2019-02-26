@@ -1,5 +1,7 @@
 import React from 'react'
 import {makeTodo} from '../api/todos'
+import{getTodos} from '../actions'
+import {connect} from 'react-redux'
 
 class TodoForm extends React.Component{
     constructor(props){
@@ -27,6 +29,7 @@ handleSubmit(event){
     }
     console.log(post)
     makeTodo(post)
+    this.props.dispatch(getTodos())
 }
 handleChange(event){
     this.setState({ [event.target.name]:event.target.value})
@@ -47,4 +50,4 @@ return(
 )
 }
 }
-export default TodoForm
+export default connect()(TodoForm)
