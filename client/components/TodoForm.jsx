@@ -1,4 +1,5 @@
 import React from 'react'
+import {makeTodo} from '../api/todos'
 
 class TodoForm extends React.Component{
     constructor(props){
@@ -17,6 +18,15 @@ class TodoForm extends React.Component{
 handleSubmit(event){
     event.preventDefault()
 
+    const post = {
+        task: this.state.task,
+        priority: this.state.priority,
+        category: this.state.category,
+        is_complete: false,
+        due_at: this.state.due_at
+    }
+    console.log(post)
+    makeTodo()
 }
 handleChange(event){
     this.setState({ [event.target.name]:event.target.value})
