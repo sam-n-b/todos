@@ -7,6 +7,7 @@ export function getTodos(){
     }
 
 export function makeTodo(makeTodo){
+    console.log('api hit')
     return request
     .post('/api/v1/todos')
     .send(makeTodo)
@@ -14,7 +15,7 @@ export function makeTodo(makeTodo){
         if(err){
             console.log(err.message)
         } else {
-            console.log(res.body)
+            console.log('make todo api running')
         }
     })
 }

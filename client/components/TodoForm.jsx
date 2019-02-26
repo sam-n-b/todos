@@ -26,7 +26,7 @@ handleSubmit(event){
         due_at: this.state.due_at
     }
     console.log(post)
-    makeTodo()
+    makeTodo(post)
 }
 handleChange(event){
     this.setState({ [event.target.name]:event.target.value})
