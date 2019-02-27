@@ -10,6 +10,11 @@ export function getTodosIsComplete(num){
         return request.get('/api/v1/todos/completed/'+num)
         .then(res => res.body)
 }
+
+export function getTodosPriority(num){
+    return request.get('/api/v1/todos/priority/'+num)
+    .then(res => res.body)
+}
         
 
 export function makeTodo(makeTodo){

@@ -8,6 +8,7 @@ import TodoList from './TodoList'
 import Nav from './Nav'
 import Completed from './Completed'
 import NotCompleted from './NotCompleted'
+import TodoPriority from './TodoPriority'
 
 class App extends React.Component{
 constructor(props){
@@ -27,6 +28,7 @@ render(){
             <Route exact path = '/' component={TodoList}/>
             <Route path='/completed' component={Completed}/>
             <Route path='/not-completed' component={NotCompleted}/>
+            <Route path='/priority' component={TodoPriority} />
             </div>
         </Router>
     )

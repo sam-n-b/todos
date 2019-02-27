@@ -1,6 +1,8 @@
 import {getTodos as apiGetTodos} from '../api/todos'
 import {getTodosIsComplete as apiGetTodosIsComplete} from '../api/todos'
+import {getTodosPriority as apigetTodosPriority} from '../api/todos'
 
+getTodosPriority
 
 export function getTodos(){
  return dispatch => {
@@ -20,6 +22,15 @@ export function getTodosIsComplete(num){
     }
    }
 
+export function getTodosPriority(num){
+return dispatch => {
+    return apigetTodosPriority(num)
+    .then(todosPriority =>{
+        dispatch(saveTodosPriority(todosPriority))
+    })
+}
+}
+
 export function saveTodos(todos){
 return {
     type: 'GET_TODOS',
@@ -31,6 +42,13 @@ export function saveTodosIsComplete(todosIsComplete){
     return {
         type: 'GET_TODOS_IS_COMPLETE',
         todosIsComplete: todosIsComplete
+        }
+    }
+
+export function saveTodosPriority(todosPriority){
+    return {
+        type: 'GET_TODOS_PRIORITY',
+        todosPriority: todosPriority
         }
     }
 
