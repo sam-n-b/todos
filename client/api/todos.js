@@ -6,6 +6,12 @@ export function getTodos(){
         .then(res => res.body)
     }
 
+export function getTodosIsComplete(num){
+        return request.get('/api/v1/todos/completed/'+num)
+        .then(res => res.body)
+}
+        
+
 export function makeTodo(makeTodo){
     console.log('api hit')
     return request

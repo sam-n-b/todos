@@ -6,7 +6,8 @@ import{getTodos} from '../actions'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import Nav from './Nav'
-
+import Completed from './Completed'
+import NotCompleted from './NotCompleted'
 
 class App extends React.Component{
 constructor(props){
@@ -24,6 +25,8 @@ render(){
             <Nav/>
             <Route path='/forms' component={TodoForm}/>
             <Route exact path = '/' component={TodoList}/>
+            <Route path='/completed' component={Completed}/>
+            <Route path='/not-completed' component={NotCompleted}/>
             </div>
         </Router>
     )

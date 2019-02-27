@@ -6,7 +6,8 @@ return(
         <ul>
             <li><Link to="/forms">Add Todo</Link></li>
             <li><Link to="/">Todos</Link></li>
-            <li><Link to="/">Add Todo</Link></li>
+            <li><Link to="/not-completed">Not Completed</Link></li>
+            <li><Link to="/completed">Completed</Link></li>
         </ul>
     </div>
 )
