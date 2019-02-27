@@ -12,7 +12,7 @@ render(){
     return(
         todos.map((item,i)=>{
             return (
-            <div>
+            <div className='list-row'>
             <TodoItem key ={i} todo={item}/>
             </div>
             )

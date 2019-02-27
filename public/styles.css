@@ -1,0 +1,16 @@
+.todo-item{
+    background-color: rgb(243, 236, 231);
+   
+}
+
+.list-row{
+  
+}
+
+.todo-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

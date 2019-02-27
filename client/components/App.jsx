@@ -20,7 +20,7 @@ componentDidMount(){
 render(){
     return(
         <Router>
-            <div>
+            <div className='todo-container'>
             <Nav/>
             <Route path='/forms' component={TodoForm}/>
             <Route exact path = '/' component={TodoList}/>
