@@ -1,39 +1,39 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { getTodosPriority } from '../actions';
+import { getTodosSearch } from '../actions';
 
-class TodoPriority extends React.Component{
+class TodoSearch extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            priorityValue: ''
+            searchValue: ''
         }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     }
     
-    componentDidMount(){
-        this.props.dispatch(getTodosPriority(6))
-   }
+
    handleSubmit(event){
     event.preventDefault()
-    this.props.dispatch(getTodosPriority(this.state.priorityValue))
+    this.props.dispatch(getTodosSearch(this.state.searchValue))
+    console.log('props'+this.props.todosSearch)
    }
    
    handleChange(event){
-    this.setState({ [event.target.name]:event.target.value})
+       this.setState({ [event.target.name]:event.target.value})
+       console.log('search val '+this.state.searchValue)
 }
 
     render(){
         return(
             <React.Fragment>
-                <h4>Priority 1-5</h4>
+                <h4>Category Search</h4>
                 <form onSubmit={this.handleSubmit}>
-                <input type="number" name='priorityValue' onChange={this.handleChange} value={this.state.priorityValue}></input>
-                <input type = 'submit' value="Priority 1" value='Submit'></input>
+                <input type="text" name='searchValue' onChange={this.handleChange} value={this.state.searchValue}></input>
+                <input type = 'submit' value='Submit'></input>
                 </form>
-                <p>Priotiry: {this.state.priorityValue > 5 || this.state.priorityValue <1 ?'':this.state.priorityValue}</p>
-            {this.props.todosPriority.map((item,i)=>{
+                <p>Category: {this.state.searchValue}</p>
+            {this.props.todosSearch.map((item,i)=>{
                 return(
                 <div className='list-row' key={i}>
                     <div className='todo-item'>
@@ -55,9 +55,11 @@ class TodoPriority extends React.Component{
 
 function mapStateToProps(state) {
     return {
-      todosPriority: state.todosPriority
+      todosSearch: state.todosSearch
     }
   }
 
 
-export default connect(mapStateToProps)(TodoPriority)
+export default connect(mapStateToProps)(TodoSearch)
+
+//export default TodoSearch

@@ -9,6 +9,7 @@ return(
             <li><Link to="/not-completed">Not Completed</Link></li>
             <li><Link to="/completed">Completed</Link></li>
             <li><Link to="/priority">Priority</Link></li>
+            <li><Link to="/search">Categories</Link></li>
             
         </ul>
     </div>

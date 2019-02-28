@@ -1,6 +1,7 @@
 import {getTodos as apiGetTodos} from '../api/todos'
 import {getTodosIsComplete as apiGetTodosIsComplete} from '../api/todos'
 import {getTodosPriority as apigetTodosPriority} from '../api/todos'
+import {getTodosSearch as apigetTodosSearch} from '../api/todos'
 
 getTodosPriority
 
@@ -31,6 +32,15 @@ return dispatch => {
 }
 }
 
+export function getTodosSearch(name){
+    return dispatch => {
+        return apigetTodosSearch(name)
+        .then(todos =>{
+            dispatch(saveTodosSearch(todos))
+        })
+    }
+    }
+
 export function saveTodos(todos){
 return {
     type: 'GET_TODOS',
@@ -51,4 +61,11 @@ export function saveTodosPriority(todosPriority){
         todosPriority: todosPriority
         }
     }
+
+    export function saveTodosSearch(todosSearch){
+        return {
+            type: 'GET_TODOS_SEARCH',
+            todosSearch: todosSearch
+            }
+        }
 

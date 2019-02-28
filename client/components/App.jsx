@@ -9,6 +9,7 @@ import Nav from './Nav'
 import Completed from './Completed'
 import NotCompleted from './NotCompleted'
 import TodoPriority from './TodoPriority'
+import TodoSearch from './TodoSearch'
 
 class App extends React.Component{
 constructor(props){
@@ -29,6 +30,7 @@ render(){
             <Route path='/completed' component={Completed}/>
             <Route path='/not-completed' component={NotCompleted}/>
             <Route path='/priority' component={TodoPriority} />
+            <Route path='/search' component={TodoSearch} />
             </div>
         </Router>
     )

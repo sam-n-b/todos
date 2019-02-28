@@ -15,6 +15,11 @@ export function getTodosPriority(num){
     return request.get('/api/v1/todos/priority/'+num)
     .then(res => res.body)
 }
+
+export function getTodosSearch(name){
+    return request.get('/api/v1/todos/category/'+name)
+    .then(res => res.body)
+}
         
 
 export function makeTodo(makeTodo){
