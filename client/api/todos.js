@@ -23,7 +23,6 @@ export function getTodosSearch(name){
         
 
 export function makeTodo(makeTodo){
-    console.log('api hit')
     return request
     .post('/api/v1/todos')
     .send(makeTodo)
