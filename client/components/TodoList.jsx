@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import TodoItem from './TodoItem'
+// import toggleCompleted from '../../server/db/todos'
 
 class TodoList extends React.Component{
 constructor(props){
@@ -8,6 +9,7 @@ constructor(props){
 }
 render(){
     const todos = this.props.todos
+    // toggleCompleted(2, false)
     
     return(
         todos.map((item,i)=>{

@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const {getTodos, getTodosByPriority, getTodosByCategory, getTodosByCompleted, createTodos} = require('../db/todos')
+const toggleCompleted = require('../db/todos')
+const db = require('../db/todos')
 
 //GET /api/v1/todos
 router.get('/', (req, res)=>{
@@ -57,5 +59,26 @@ router.post('/', (req,res)=>{
     const todos = req.body
     createTodos(todos)
     .then(res.json({ok: 'ok'}))
+})
+
+router.post('/complete/:id/:is_complete', (req,res) => {
+    var id = req.params.id
+    var isComplete = null
+
+    
+    if (req.params.is_complete == 'true'){
+        isComplete = true
+    } else {
+        isComplete = false
+    }
+
+    db.toggleCompleted(id,isComplete)
+    .then((num) => {
+        res.json(num)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({error: 'Something went wrong'})
+    })
 })
 module.exports = router
