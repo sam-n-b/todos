@@ -29,7 +29,11 @@ handleSubmit(event){
     }
     console.log(post)
     makeTodo(post)
-    this.props.dispatch(getTodos())
+    if(this.state.task === "" || this.state.category === ""){
+        alert("Please fill in New Todo and Category")
+    } else {
+        this.props.dispatch(getTodos())
+    }
 }
 handleChange(event){
     this.setState({ [event.target.name]:event.target.value})
