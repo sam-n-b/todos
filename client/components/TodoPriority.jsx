@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { getTodosPriority } from '../actions';
+import TodoItem from './TodoItem'
 
 class TodoPriority extends React.Component{
     constructor(props){
@@ -42,20 +43,12 @@ class TodoPriority extends React.Component{
                 <p>Priotiry: {this.state.priorityValue > 5 || this.state.priorityValue <1 ?'':this.state.priorityValue}</p>
             {this.props.todosPriority.map((item,i)=>{
                 return(
-                <div className='list-row' key={i}>
-                    <div className='todo-item'>
-                    <span>Todo: {item.task}</span>
-                    <span>      Category: {item.category}</span>
-                    <span>      Priority: {item.priority}</span>
-                    <span>      Due: {item.due_at}</span>
-                    <br/>
+                    <div className='list-row'>
+                    <TodoItem key ={i} todo={item}/>
                     </div>
-                </div>
                 )
-            })}
-                
+            })} 
             </React.Fragment>
-
         )
     }
 }
