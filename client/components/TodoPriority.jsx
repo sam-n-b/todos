@@ -27,9 +27,16 @@ class TodoPriority extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h4>Priority 1-5</h4>
+                <h5>Select Priority</h5>
                 <form onSubmit={this.handleSubmit}>
-                <input type="number" name='priorityValue' onChange={this.handleChange} value={this.state.priorityValue}></input>
+                <select type="number" name='priorityValue' onChange={this.handleChange} value={this.state.priorityValue}>
+                    <option value ="1">1</option>
+                    <option value ="2">2</option>
+                    <option value ="3">3</option>
+                    <option value ="4">4</option>
+                    <option value ="5">5</option>
+                </select>
+                <br/>
                 <input type = 'submit' value="Priority 1" value='Submit'></input>
                 </form>
                 <p>Priotiry: {this.state.priorityValue > 5 || this.state.priorityValue <1 ?'':this.state.priorityValue}</p>

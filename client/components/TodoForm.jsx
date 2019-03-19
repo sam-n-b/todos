@@ -53,8 +53,14 @@ return(
         <form onSubmit={this.handleSubmit}>
             <p>New Todo:<br/><input type='text' name ='task' onChange={this.handleChange} value={this.state.task}/></p>
             <p>Category:<br/><input type='text' name ='category'onChange={this.handleChange} value={this.state.category}/></p>
-            <p>Priority (1-5):<br/><input type='text' name ='priority'onChange={this.handleChange} value={this.state.priority}/></p>
-            <p>Due (YYYY-MM-DD):<br/><input type='date' name='due_at'onChange={this.handleChange} value={this.state.due_at}/></p>
+            <p>Priority (1-5):<br/><select type='text' name ='priority'onChange={this.handleChange} value={this.state.priority}>
+            <option value ="1">1</option>
+            <option value ="2">2</option>
+            <option value ="3">3</option>
+            <option value ="4">4</option>
+            <option value ="5">5</option>
+            </select></p>
+            <p>Due:<br/><input type='date' name='due_at'onChange={this.handleChange} value={this.state.due_at}/></p>
             <p><input type='submit' value='Make Todo'/></p>
 
         </form>
