@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { getTodosSearch } from '../actions';
+import TodoItem from './TodoItem'
 
 class TodoSearch extends React.Component{
     constructor(props){
@@ -37,15 +38,9 @@ class TodoSearch extends React.Component{
                 <p>Category: {this.state.searchTitle}</p>
             {this.props.todosSearch.map((item,i)=>{
                 return(
-                <div className='list-row' key={i}>
-                    <div className='todo-item'>
-                    <span>Todo: {item.task}</span>
-                    <span>      Category: {item.category}</span>
-                    <span>      Priority: {item.priority}</span>
-                    <span>      Due: {item.due_at}</span>
-                    <br/>
+                    <div className='list-row'>
+                    <TodoItem key ={i} todo={item}/>
                     </div>
-                </div>
                 )
             })}
                 
