@@ -2,8 +2,8 @@ import {getTodos as apiGetTodos} from '../api/todos'
 import {getTodosIsComplete as apiGetTodosIsComplete} from '../api/todos'
 import {getTodosPriority as apigetTodosPriority} from '../api/todos'
 import {getTodosSearch as apigetTodosSearch} from '../api/todos'
+import {toggleTodo as apiToggleTodo} from '../api/todos'
 
-getTodosPriority
 
 export function getTodos(){
  return dispatch => {
@@ -40,6 +40,13 @@ export function getTodosSearch(name){
         })
     }
     }
+export function toggleTodo(id, isComplete){
+    return dispatch =>{
+        return apiToggleTodo(id, isComplete)
+    //     .then(todos =>{
+    //         dispatch(saveTodos(todos))
+    // })
+}}
 
 export function saveTodos(todos){
 return {
@@ -68,4 +75,6 @@ export function saveTodosPriority(todosPriority){
             todosSearch: todosSearch
             }
         }
+
+
 
