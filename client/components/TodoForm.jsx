@@ -33,6 +33,14 @@ handleSubmit(event){
         alert("Please fill in New Todo and Category")
     } else {
         this.props.dispatch(getTodos())
+        this.setState({
+            task:'',
+            priority:'',
+            category:'',
+            is_complete:'false',
+            due_at:''
+        })
+        alert("New Todo added")
     }
 }
 handleChange(event){
