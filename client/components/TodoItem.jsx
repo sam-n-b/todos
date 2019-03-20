@@ -1,22 +1,35 @@
 import React from 'React'
 import {connect} from 'react-redux'
 import{toggleTodo} from '../actions'
+import{getTodos} from '../actions'
 
-function TodoItem(props){
-    
+class TodoItem extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    handleClickComplete(e){
+        this.props.dispatch(toggleTodo(this.props.todo.id, true))
+        this.props.dispatch(getTodos())
+    }
+    handleClickNotComplete(e){
+        this.props.dispatch(toggleTodo(this.props.todo.id, false))
+        this.props.dispatch(getTodos())
+    }
+   render(){
     return(
         
-        <div className={props.todo.is_complete?'todo-item completed':'todo-item'}>
-        <span>Todo: {props.todo.task}</span>
-        <span>      Category: {props.todo.category}</span>
-        <span>      Priority: {props.todo.priority}</span>
-        <span>      Due: {props.todo.due_at}   </span>
-        <button>complete</button>
+        <div className={this.props.todo.is_complete?'todo-item completed':'todo-item'}>
+        <span>Todo: {this.props.todo.task}</span>
+        <span>      Category: {this.props.todo.category}</span>
+        <span>      Priority: {this.props.todo.priority}</span>
+        <span>      Due: {this.props.todo.due_at}   </span>
+        <button onClick={this.props.todo.is_complete?
+                            this.handleClickNotComplete.bind(this):this.handleClickComplete.bind(this)}>complete</button>
         <br/>
         </div>
     )
+   } 
+
 }
 
 export default connect()(TodoItem)
-
-//this.props.dispatch(toggleTodo(7, true)) USE THIS DISPATCH IN BUTTON
