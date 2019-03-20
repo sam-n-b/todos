@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {getTodos, getTodosByPriority, getTodosByCategory, getTodosByCompleted, createTodos} = require('../db/todos')
+const {getTodos, getTodosByPriority, getTodosByCategory, getTodosByCompleted, createTodos, deleteTodo} = require('../db/todos')
 const toggleCompleted = require('../db/todos')
 const db = require('../db/todos')
 
@@ -80,5 +80,11 @@ router.post('/complete/:id/:is_complete', (req,res) => {
         console.log(err)
         res.status(500).json({error: 'Something went wrong'})
     })
+})
+
+router.post('/delete/:id', (req,res)=>{
+    var id = req.params.id
+    db.deleteTodo(id)
+    .then(res.json({ok: 'deleted'+id}))
 })
 module.exports = router

@@ -28,8 +28,12 @@ function getTodosByCompleted(completed, testDb){
 
 function toggleCompleted(id, completed, testDb){
     const db = testDb || connection
-
     return db('todos').where('id',id).update('is_complete',completed)
+}
+
+function deleteTodo(id){
+    const db = connection
+    return db('todos').where('id',id).del()
 }
 
 module.exports = {
@@ -38,6 +42,7 @@ module.exports = {
     getTodosByPriority,
     getTodosByCategory,
     getTodosByCompleted,
-    toggleCompleted
+    toggleCompleted,
+    deleteTodo
 
 }
