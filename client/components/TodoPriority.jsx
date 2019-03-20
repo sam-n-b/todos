@@ -7,7 +7,7 @@ class TodoPriority extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            priorityValue: ''
+            priorityValue: '1'
         }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
