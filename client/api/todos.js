@@ -34,3 +34,15 @@ export function makeTodo(makeTodo){
         }
     })
 }
+export function toggleTodo(id, isComplete){
+    return request
+    .post(`/api/v1/todos/complete/${id}/${isComplete}`)
+    .send(makeTodo)
+    .end((err,res)=>{
+        if(err){
+            console.log(err.message)
+        } else {
+            console.log('make todo api running')
+        }
+    })
+}
