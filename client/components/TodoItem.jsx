@@ -1,6 +1,6 @@
 import React from 'React'
 import {connect} from 'react-redux'
-import{toggleTodo} from '../actions'
+import{toggleTodo, deleteTodo} from '../actions'
 import{getTodos} from '../actions'
 
 class TodoItem extends React.Component{
@@ -9,6 +9,10 @@ class TodoItem extends React.Component{
     }
     handleClickComplete(e){
         this.props.dispatch(toggleTodo(this.props.todo.id, !this.props.todo.is_complete))
+        this.props.dispatch(getTodos())
+    }
+    handdleClickDelete(e){
+        this.props.dispatch(deleteTodo(this.props.todo.id))
         this.props.dispatch(getTodos())
     }
    render(){
@@ -20,6 +24,7 @@ class TodoItem extends React.Component{
         <span>      Priority: {this.props.todo.priority}</span>
         <span>      Due: {this.props.todo.due_at}   </span>
         <button onClick={this.handleClickComplete.bind(this)}>complete</button>
+        <button onClick={this.handdleClickDelete.bind(this)}>remove</button>
         <br/>
         </div>
     )

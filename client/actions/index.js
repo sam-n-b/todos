@@ -3,6 +3,7 @@ import {getTodosIsComplete as apiGetTodosIsComplete} from '../api/todos'
 import {getTodosPriority as apigetTodosPriority} from '../api/todos'
 import {getTodosSearch as apigetTodosSearch} from '../api/todos'
 import {toggleTodo as apiToggleTodo} from '../api/todos'
+import {deleteTodo as apiDeleteTodo} from '../api/todos'
 
 
 export function getTodos(){
@@ -48,6 +49,12 @@ export function toggleTodo(id, isComplete){
     // })
 }}
 
+export function deleteTodo(id){
+    return dispatch =>{
+        return apiDeleteTodo(id)
+    }
+}
+
 export function saveTodos(todos){
 return {
     type: 'GET_TODOS',
@@ -75,6 +82,7 @@ export function saveTodosPriority(todosPriority){
             todosSearch: todosSearch
             }
         }
+
 
 
 
