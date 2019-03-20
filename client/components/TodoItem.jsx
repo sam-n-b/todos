@@ -8,11 +8,7 @@ class TodoItem extends React.Component{
         super(props)
     }
     handleClickComplete(e){
-        this.props.dispatch(toggleTodo(this.props.todo.id, true))
-        this.props.dispatch(getTodos())
-    }
-    handleClickNotComplete(e){
-        this.props.dispatch(toggleTodo(this.props.todo.id, false))
+        this.props.dispatch(toggleTodo(this.props.todo.id, !this.props.todo.is_complete))
         this.props.dispatch(getTodos())
     }
    render(){
@@ -23,8 +19,7 @@ class TodoItem extends React.Component{
         <span>      Category: {this.props.todo.category}</span>
         <span>      Priority: {this.props.todo.priority}</span>
         <span>      Due: {this.props.todo.due_at}   </span>
-        <button onClick={this.props.todo.is_complete?
-                            this.handleClickNotComplete.bind(this):this.handleClickComplete.bind(this)}>complete</button>
+        <button onClick={this.handleClickComplete.bind(this)}>complete</button>
         <br/>
         </div>
     )
