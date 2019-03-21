@@ -23,3 +23,7 @@
 .priority-img{
     height:10px
 }
+
+.priority-img-completed{
+    filter: grayscale(100%)
+}
