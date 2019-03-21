@@ -8,7 +8,7 @@ class TodoForm extends React.Component{
         super(props)
         this.state = {
             task:'',
-            priority:'',
+            priority:'1',
             category:'',
             is_complete:'false',
             due_at:''
@@ -35,7 +35,7 @@ handleSubmit(event){
         this.props.dispatch(getTodos())
         this.setState({
             task:'',
-            priority:'',
+            priority:'1',
             category:'',
             is_complete:'false',
             due_at:''
