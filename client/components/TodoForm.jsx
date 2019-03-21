@@ -1,7 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {makeTodo} from '../api/todos'
 import{getTodos} from '../actions'
-import {connect} from 'react-redux'
 
 class TodoForm extends React.Component{
     constructor(props){

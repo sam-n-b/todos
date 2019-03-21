@@ -1,7 +1,6 @@
 import React from 'React'
 import {connect} from 'react-redux'
-import{toggleTodo, deleteTodo} from '../actions'
-import{getTodos} from '../actions'
+import{toggleTodo, deleteTodo, getTodos} from '../actions'
 
 class TodoItem extends React.Component{
     constructor(props){
@@ -19,10 +18,10 @@ class TodoItem extends React.Component{
     return(
         
         <div className={this.props.todo.is_complete?'todo-item completed':'todo-item'}>
-        <span>Todo: {this.props.todo.task}</span>
-        <span>      Category: {this.props.todo.category}</span>
-        <span>      Priority: {this.props.todo.priority}</span>
-        <span>      Due: {this.props.todo.due_at}   </span>
+        <span><b>Todo: </b>{this.props.todo.task}</span>
+        <span>      <b>Category: </b>{this.props.todo.category}</span>
+        <span>      <b>Priority: </b>{this.props.todo.priority}</span>
+        <span>      <b>Due: </b>{this.props.todo.due_at}   </span>
         <img className={this.props.todo.is_complete?'priority-img priority-img-completed':'priority-img'} src={`/images/priority${this.props.todo.priority}.png`}/>
         <button onClick={this.handleClickComplete.bind(this)}>complete</button>
         <button onClick={this.handdleClickDelete.bind(this)}>remove</button>
