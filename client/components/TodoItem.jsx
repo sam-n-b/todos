@@ -23,6 +23,7 @@ class TodoItem extends React.Component{
         <span>      Category: {this.props.todo.category}</span>
         <span>      Priority: {this.props.todo.priority}</span>
         <span>      Due: {this.props.todo.due_at}   </span>
+        <img className='priority-img' src={`/images/priority${this.props.todo.priority}.png`}/>
         <button onClick={this.handleClickComplete.bind(this)}>complete</button>
         <button onClick={this.handdleClickDelete.bind(this)}>remove</button>
         <br/>
