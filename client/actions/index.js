@@ -83,6 +83,13 @@ export function saveTodosPriority(todosPriority){
             }
         }
 
+export function changeSearchValue(todosSearchValue){
+    return{
+        type: 'GET_TODOS_SEARCH_VALUE',
+        todosSearchValue:todosSearchValue
+    }
+}
+
 
 
 

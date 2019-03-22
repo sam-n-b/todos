@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { getTodosSearch } from '../actions';
+import { getTodosSearch, changeSearchValue } from '../actions';
 import TodoItem from './TodoItem'
+
 
 class TodoSearch extends React.Component{
     constructor(props){
@@ -17,14 +18,15 @@ class TodoSearch extends React.Component{
 
    handleSubmit(event){
     event.preventDefault()
-    this.props.dispatch(getTodosSearch(this.state.searchValue))
+    this.props.dispatch(getTodosSearch(this.props.todosSearchValue))
     this.setState({
         searchTitle: this.state.searchValue
     })
    }
    
    handleChange(event){
-       this.setState({ [event.target.name]:event.target.value})
+       //this.setState({ [event.target.name]:event.target.value})
+       this.props.dispatch(changeSearchValue(event.target.value))
 }
 
     render(){
@@ -32,7 +34,7 @@ class TodoSearch extends React.Component{
             <React.Fragment>
                 <h4>Category Search</h4>
                 <form onSubmit={this.handleSubmit}>
-                <input type="text" name='searchValue' onChange={this.handleChange} value={this.state.searchValue}></input>
+                <input type="text" name='searchValue' onChange={this.handleChange} value={this.props.todosSearchValue}></input>
                 <input type = 'submit' value='Submit'></input>
                 </form>
                 <p>Category: {this.state.searchTitle}</p>
@@ -52,7 +54,8 @@ class TodoSearch extends React.Component{
 
 function mapStateToProps(state) {
     return {
-      todosSearch: state.todosSearch
+      todosSearch: state.todosSearch,
+      todosSearchValue: state.todosSearchValue
     }
   }
 

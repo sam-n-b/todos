@@ -1,6 +1,6 @@
 import React from 'React'
 import {connect} from 'react-redux'
-import{toggleTodo, deleteTodo, getTodos} from '../actions'
+import{toggleTodo, deleteTodo, getTodos, getTodosSearch} from '../actions'
 
 class TodoItem extends React.Component{
     constructor(props){
@@ -9,10 +9,12 @@ class TodoItem extends React.Component{
     handleClickComplete(e){
         this.props.dispatch(toggleTodo(this.props.todo.id, !this.props.todo.is_complete))
         this.props.dispatch(getTodos())
+        this.props.dispatch(getTodosSearch(this.props.todosSearchValue))
     }
     handdleClickDelete(e){
         this.props.dispatch(deleteTodo(this.props.todo.id))
         this.props.dispatch(getTodos())
+        this.props.dispatch(getTodosSearch(this.props.todosSearchValue))
     }
    render(){
     return(
@@ -31,5 +33,7 @@ class TodoItem extends React.Component{
    } 
 
 }
-
-export default connect()(TodoItem)
+function mapStateToProps(state){
+    return {todosSearchValue: state.todosSearchValue}
+}
+export default connect(mapStateToProps)(TodoItem)
