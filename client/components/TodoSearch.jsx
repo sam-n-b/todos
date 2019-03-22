@@ -7,10 +7,7 @@ import TodoItem from './TodoItem'
 class TodoSearch extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            searchValue: '',
-            searchTitle: ''
-        }
+        
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     }
@@ -19,13 +16,9 @@ class TodoSearch extends React.Component{
    handleSubmit(event){
     event.preventDefault()
     this.props.dispatch(getTodosSearch(this.props.todosSearchValue))
-    this.setState({
-        searchTitle: this.state.searchValue
-    })
    }
    
    handleChange(event){
-       //this.setState({ [event.target.name]:event.target.value})
        this.props.dispatch(changeSearchValue(event.target.value))
 }
 
@@ -37,7 +30,6 @@ class TodoSearch extends React.Component{
                 <input type="text" name='searchValue' onChange={this.handleChange} value={this.props.todosSearchValue}></input>
                 <input type = 'submit' value='Submit'></input>
                 </form>
-                <p>Category: {this.state.searchTitle}</p>
             {this.props.todosSearch.map((item,i)=>{
                 return(
                     <div className='list-row'>

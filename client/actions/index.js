@@ -90,6 +90,13 @@ export function changeSearchValue(todosSearchValue){
     }
 }
 
+export function changePriorityValue(todosPriorityValue){
+    return{
+        type: 'GET_TODOS_PRIORITY_VALUE',
+        todosPriorityValue: todosPriorityValue
+
+    }
+}
 
 
 
