@@ -28,7 +28,7 @@ export function getTodosPriority(num){
 return dispatch => {
     return apigetTodosPriority(num)
     .then(todosPriority =>{
-        dispatch(saveTodos(todosPriority))
+        dispatch(saveTodosPriority(todosPriority))
     })
 }
 }
@@ -97,6 +97,4 @@ export function changePriorityValue(todosPriorityValue){
 
     }
 }
-
-
 
