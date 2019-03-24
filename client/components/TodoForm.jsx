@@ -1,14 +1,14 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {makeTodo} from '../api/todos'
 import{getTodos} from '../actions'
-import {connect} from 'react-redux'
 
 class TodoForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
             task:'',
-            priority:'',
+            priority:'1',
             category:'',
             is_complete:'false',
             due_at:''
@@ -35,7 +35,7 @@ handleSubmit(event){
         this.props.dispatch(getTodos())
         this.setState({
             task:'',
-            priority:'',
+            priority:'1',
             category:'',
             is_complete:'false',
             due_at:''

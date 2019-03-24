@@ -42,7 +42,20 @@ export function toggleTodo(id, isComplete){
         if(err){
             console.log(err.message)
         } else {
-            console.log('make todo api running')
+            console.log('toggle completed todo api running')
+        }
+    })
+}
+
+export function deleteTodo(id){
+    return request
+    .post(`api/v1/todos/delete/${id}`)
+    .send(makeTodo)
+    .end((err,res)=>{
+        if(err){
+            console.log(err.message)
+        } else {
+            console.log('delete todo api running')
         }
     })
 }
