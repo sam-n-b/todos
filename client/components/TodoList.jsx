@@ -1,11 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import TodoItem from './TodoItem'
+import{getTodos} from '../actions'
 
 
 class TodoList extends React.Component{
 constructor(props){
     super(props)
+}
+componentDidMount(){
+    this.props.dispatch(getTodos())
 }
 render(){
     const todos = this.props.todos

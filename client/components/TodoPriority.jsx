@@ -6,9 +6,6 @@ import TodoItem from './TodoItem'
 class TodoPriority extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            priorityValue: '1'
-        }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     }
@@ -42,7 +39,7 @@ class TodoPriority extends React.Component{
                 <input type = 'submit' value="Priority 1" value='Submit'></input>
                 </form>
                 <p>Priotiry: {this.props.todosPriorityValue > 5 || this.props.todosPriorityValue <1 ?'':this.props.todosPriorityValue}</p>
-            {this.props.todosPriority.map((item,i)=>{
+            {this.props.todos.map((item,i)=>{
                 return(
                     <div className='list-row'>
                     <TodoItem key ={i} todo={item}/>
@@ -57,7 +54,8 @@ class TodoPriority extends React.Component{
 function mapStateToProps(state) {
     return {
       todosPriority: state.todosPriority,
-      todosPriorityValue: state.todosPriorityValue
+      todosPriorityValue: state.todosPriorityValue,
+      todos: state.todos
     }
   }
 
