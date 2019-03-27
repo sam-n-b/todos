@@ -1,6 +1,6 @@
 import React from 'React'
 import {connect} from 'react-redux'
-import{toggleTodo, deleteTodo, getTodos, getTodosSearch, getTodosPriority} from '../actions'
+import{toggleTodo, deleteTodo, getTodos, getTodosSearch, getTodosPriority, getTodosIsComplete} from '../actions'
 
 class TodoItem extends React.Component{
     constructor(props){
@@ -11,6 +11,7 @@ class TodoItem extends React.Component{
         dispatch(toggleTodo(this.props.todo.id, !this.props.todo.is_complete))
         dispatch(getTodos())
         dispatch(getTodosPriority(this.props.todosPriorityValue))
+        dispatch(getTodosIsComplete(this.props.todosCompletedValue))
         this.props.todosSearchValue.length >0 && dispatch(getTodosSearch(this.props.todosSearchValue))
     }
     handleClickDelete(e){
@@ -18,6 +19,7 @@ class TodoItem extends React.Component{
         dispatch(deleteTodo(this.props.todo.id))
         dispatch(getTodos())
         dispatch(getTodosPriority(this.props.todosPriorityValue))
+        dispatch(getTodosIsComplete(this.props.todosCompletedValue))
         this.props.todosSearchValue.length >0 && dispatch(getTodosSearch(this.props.todosSearchValue))
     }
    render(){
@@ -40,7 +42,8 @@ class TodoItem extends React.Component{
 function mapStateToProps(state){
     return {
         todosSearchValue: state.todosSearchValue,
-        todosPriorityValue: state.todosPriorityValue
+        todosPriorityValue: state.todosPriorityValue,
+        todosCompletedValue: state.todosCompletedValue
     }
 }
 export default connect(mapStateToProps)(TodoItem)
