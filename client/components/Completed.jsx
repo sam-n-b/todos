@@ -29,7 +29,6 @@ class Completed extends React.Component{
 function mapStateToProps(state) {
     return {
       todosIsComplete: state.todosIsComplete,
-      todosCompletedValue: state.todosCompletedValue
     }
   }
 

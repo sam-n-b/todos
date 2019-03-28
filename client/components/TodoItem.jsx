@@ -26,14 +26,18 @@ class TodoItem extends React.Component{
        const todo = this.props.todo
     return(
         <div className={todo.is_complete?'todo-item completed':'todo-item'}>
-        <span><b>Todo: </b>{todo.task}</span>
-        <span>      <b>Category: </b>{todo.category}</span>
-        <span>      <b>Priority: </b>{todo.priority}</span>
-        <span>      <b>Due: </b>{todo.due_at}   </span>
-        <img className={todo.is_complete?'priority-img priority-img-completed':'priority-img'} src={`/images/priority${todo.priority}.png`}/>
-        <button onClick={this.handleClickComplete.bind(this)}>complete</button>
-        <button onClick={this.handleClickDelete.bind(this)}>remove</button>
-        <br/>
+            <span><b>Todo: </b>{todo.task}</span>
+            <span>      <b>Category: </b>{todo.category}</span>
+            <span>      <b>Priority: </b>{todo.priority}</span>
+            <span>      <b>Due: </b>{todo.due_at}   </span>
+            <img className={todo.is_complete?'priority-img priority-img-completed':'priority-img'} src={`/images/priority${todo.priority}.png`}/>
+            <span>
+            <div className='button-wrapper'>
+                <button onClick={this.handleClickComplete.bind(this)}>complete</button>
+                <button onClick={this.handleClickDelete.bind(this)}>remove</button>
+            </div>
+            </span>
+            <br/>
         </div>
     )
    } 

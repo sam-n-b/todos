@@ -1,8 +1,17 @@
+.button-wrapper{
+    display: none
+    }
 .todo-item{
     background-color: rgb(243, 236, 231);
-   
+    display:flex;
+    align-items: center;
 }
 
+.todo-item:hover .button-wrapper{
+display: block;
+height: 45px;
+align-items: center;
+}
 .list-row{
   
 }
