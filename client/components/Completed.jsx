@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { getTodosIsComplete } from '../actions';
+import { getTodosIsComplete, changeCompletedValue } from '../actions';
 import TodoItem from './TodoItem'
 
 class Completed extends React.Component{
@@ -9,6 +9,7 @@ class Completed extends React.Component{
     }
     componentDidMount(){
         this.props.dispatch(getTodosIsComplete(1))
+        this.props.dispatch(changeCompletedValue(1))
     }
     render(){
         return(
@@ -27,7 +28,7 @@ class Completed extends React.Component{
 
 function mapStateToProps(state) {
     return {
-      todosIsComplete: state.todosIsComplete
+      todosIsComplete: state.todosIsComplete,
     }
   }
 

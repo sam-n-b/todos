@@ -98,3 +98,9 @@ export function changePriorityValue(todosPriorityValue){
     }
 }
 
+export function changeCompletedValue(todosCompletedValue){
+    return{
+        type: 'CHANGE_COMPLETED_VALUE',
+        todosCompletedValue: todosCompletedValue
+    }
+}
