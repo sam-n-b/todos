@@ -47,6 +47,7 @@ class TodoSearch extends React.Component{
 function mapStateToProps(state) {
     return {
       todosSearch: state.todosSearch,
+      todosSearchValue: state.todosSearchValue
     }
   }
 

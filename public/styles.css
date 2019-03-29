@@ -1,20 +1,33 @@
 .button-wrapper{
-    display: none
+    display: none;
     }
 .todo-item{
     background-color: rgb(243, 236, 231);
     display:flex;
     align-items: center;
+    height: 45px;
+    width: 1000px;
 }
 
 .todo-item:hover .button-wrapper{
 display: block;
-height: 45px;
 align-items: center;
 }
-.list-row{
-  
+.task{
+  width: 300px
 }
+.category{
+    width: 175px
+  }
+.image-wrapper{
+width: 75px
+}
+.priority{
+width: 100px
+}
+.due{
+    width: 150px
+    }
 
 .todo-container{
     display: flex;
@@ -22,6 +35,7 @@ align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
 }
 
 .completed{
