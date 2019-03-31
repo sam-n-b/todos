@@ -14,16 +14,18 @@ class TodoPriority extends React.Component{
     }
     
     componentDidMount(){
-        this.props.dispatch(getTodosPriority(6))
+        this.props.dispatch(getTodosPriority(this.props.todosPriorityValue))
    }
    handleSubmit(event){
     event.preventDefault()
     this.props.dispatch(getTodosPriority(this.props.todosPriorityValue))
+    this.setState({priorityValue: this.props.todosPriorityValue})
    }
    
    handleChange(event){
     //this.setState({ [event.target.name]:event.target.value})
     this.props.dispatch(changePriorityValue(event.target.value))
+    
 }
 
     render(){
@@ -41,7 +43,7 @@ class TodoPriority extends React.Component{
                 <br/>
                 <input type = 'submit' value="Priority 1" value='Submit'></input>
                 </form>
-                <p>Priotiry: {this.props.todosPriorityValue > 5 || this.props.todosPriorityValue <1 ?'':this.props.todosPriorityValue}</p>
+                <p>Priotiry: {this.props.todosPriorityValue > 5 || this.props.todosPriorityValue <1 ?'':this.state.priorityValue}</p>
             {this.props.todosPriority.map((item,i)=>{
                 return(
                     <div className='list-row'>
