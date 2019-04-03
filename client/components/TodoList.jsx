@@ -14,9 +14,13 @@ render(){
     return(
         todos.map((item,i)=>{
             return (
-            <div className='list-row'>
-            <TodoItem key ={i} todo={item}/>
-            </div>
+            <React.Fragment>
+                <div className='list-row'>
+                    <TodoItem key ={i} todo={item}/>
+                </div>
+                <br/>
+            </React.Fragment>
+            
             )
         })
     )

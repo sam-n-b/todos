@@ -7,14 +7,19 @@
     align-items: center;
     height: 45px;
     width: 1000px;
+    
 }
 
 .todo-item:hover .button-wrapper{
 display: block;
 align-items: center;
 }
+.todo-item:hover{
+    box-shadow: 2px 4px lightgray;
+    }
 .task{
-  width: 300px
+  width: 300px;
+  margin-left: 20px
 }
 .category{
     width: 175px
