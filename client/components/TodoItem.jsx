@@ -36,8 +36,8 @@ class TodoItem extends React.Component{
             </div>
             <span>
             <div className='button-wrapper'>
-                <button onClick={this.handleClickComplete.bind(this)}>complete</button>
-                <button onClick={this.handleClickDelete.bind(this)}>remove</button>
+                <button onClick={this.handleClickComplete.bind(this)} className="btn btn-primary btn-sm search-button">complete</button>
+                <button onClick={this.handleClickDelete.bind(this)} className="btn btn-primary btn-sm search-button">remove</button>
             </div>
             </span>
         </div>
