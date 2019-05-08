@@ -27,8 +27,10 @@ class TodoSearch extends React.Component{
             <React.Fragment>
                 <h4>Category Search</h4>
                 <form onSubmit={this.handleSubmit}>
-                <input type="text" name='searchValue' onChange={this.handleChange} value={this.props.todosSearchValue}></input>
-                <input type = 'submit' value='Submit'></input>
+                <div className="category-search-form">
+                    <input type="text" name='searchValue' onChange={this.handleChange} value={this.props.todosSearchValue}></input>
+                    <input type = 'submit' value='Submit' className="btn btn-primary btn-sm search-button"></input>
+                </div>
                 </form>
             {this.props.todosSearch.map((item,i)=>{
                 return(

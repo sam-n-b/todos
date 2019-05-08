@@ -61,7 +61,7 @@ return(
             <option value ="5">5</option>
             </select></p>
             <p>Due:<br/><input type='date' name='due_at'onChange={this.handleChange} value={this.state.due_at}/></p>
-            <p><input type='submit' value='Make Todo'/></p>
+            <p><input type='submit' value='Make Todo' className="btn btn-primary btn-md make-button"/></p>
 
         </form>
     </div>

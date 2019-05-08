@@ -84,3 +84,28 @@ nav h1{
 a:link, a:visited, a:hover, a:active {
     text-decoration: none; color: white;
   }
+
+.search-button{
+    background-color: #5085A5;
+    height:30px;
+    margin-left: 3px;
+    border:none
+
+}
+
+.make-button{
+    background-color: #5085A5;
+    border:none
+
+}
+
+.category-search-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px
+}
+
+select{
+    height:30px
+}
