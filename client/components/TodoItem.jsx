@@ -25,9 +25,10 @@ class TodoItem extends React.Component{
    render(){
        const todo = this.props.todo
     return(
+        <React.Fragment>
         <div className={todo.is_complete?'todo-item completed':'todo-item'}>
-            <div className ='task'><b>Todo: </b>{todo.task}</div>
-            <div className ='category'><b>Category:</b>{todo.category}</div>
+            <div className ='task'><b>To do: </b>{todo.task}</div>
+            <div className ='category'><b>Category: </b>{todo.category}</div>
             <div className = 'priority'><b>Priority: </b>{todo.priority}</div>
             <div className = 'due'><b>Due: </b>{todo.due_at}</div>
             <div className = 'image-wrapper'>
@@ -39,8 +40,9 @@ class TodoItem extends React.Component{
                 <button onClick={this.handleClickDelete.bind(this)}>remove</button>
             </div>
             </span>
-            <br/>
         </div>
+        </React.Fragment>
+
     )
    } 
 

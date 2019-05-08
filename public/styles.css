@@ -2,11 +2,12 @@
     display: none;
     }
 .todo-item{
-    background-color: rgb(243, 236, 231);
+    background-color: #dfe8f0;
     display:flex;
     align-items: center;
     height: 45px;
     width: 1000px;
+    border-radius: 3px
     
 }
 
