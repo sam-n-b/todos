@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 function Nav(props){
 return(
-    <div>
+    <React.Fragment>
+    <nav>
+        <h1>To Do List</h1>
         <ul>
             <li><Link to="/forms">Add Todo</Link></li>
             <li><Link to="/">Todos</Link></li>
@@ -12,7 +14,10 @@ return(
             <li><Link to="/search">Categories</Link></li>
             
         </ul>
-    </div>
+    </nav>
+    <br/>
+    </React.Fragment>
+
 )
 }
 

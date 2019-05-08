@@ -55,3 +55,31 @@ width: 100px
 .priority-img-completed{
     filter: grayscale(100%)
 }
+
+nav{
+    background-color: #5085A5;
+    width: 100%;
+    min-width: 1000px;
+    
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+nav ul li {
+    margin: 20px 20px 10px 20px
+}
+nav h1{
+    font-family: 'Pacifico', cursive;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 60px
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none; color: white;
+  }
