@@ -14,16 +14,18 @@ class TodoPriority extends React.Component{
     }
     
     componentDidMount(){
-        this.props.dispatch(getTodosPriority(6))
+        this.props.dispatch(getTodosPriority(this.props.todosPriorityValue))
    }
    handleSubmit(event){
     event.preventDefault()
     this.props.dispatch(getTodosPriority(this.props.todosPriorityValue))
+    this.setState({priorityValue: this.props.todosPriorityValue})
    }
    
    handleChange(event){
     //this.setState({ [event.target.name]:event.target.value})
     this.props.dispatch(changePriorityValue(event.target.value))
+    
 }
 
     render(){
@@ -31,17 +33,18 @@ class TodoPriority extends React.Component{
             <React.Fragment>
                 <h5>Select Priority</h5>
                 <form onSubmit={this.handleSubmit}>
-                <select type="number" name='priorityValue' onChange={this.handleChange} value={this.props.todosPriorityValue}>
-                    <option value ="1">1</option>
-                    <option value ="2">2</option>
-                    <option value ="3">3</option>
-                    <option value ="4">4</option>
-                    <option value ="5">5</option>
-                </select>
-                <br/>
-                <input type = 'submit' value="Priority 1" value='Submit'></input>
+                <div className="category-search-form">
+                    <select type="number" name='priorityValue' onChange={this.handleChange} value={this.props.todosPriorityValue}>
+                        <option value ="1">1</option>
+                        <option value ="2">2</option>
+                        <option value ="3">3</option>
+                        <option value ="4">4</option>
+                        <option value ="5">5</option>
+                    </select>
+                    <input type = 'submit' value="Priority 1" value='Submit' className="btn btn-primary btn-sm search-button"></input>
+                </div>
                 </form>
-                <p>Priotiry: {this.props.todosPriorityValue > 5 || this.props.todosPriorityValue <1 ?'':this.props.todosPriorityValue}</p>
+                <p>Priotiry: {this.props.todosPriorityValue > 5 || this.props.todosPriorityValue <1 ?'':this.state.priorityValue}</p>
             {this.props.todosPriority.map((item,i)=>{
                 return(
                     <div className='list-row'>
