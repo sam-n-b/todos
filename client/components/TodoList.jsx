@@ -18,7 +18,6 @@ render(){
                 <div className='list-row'>
                     <TodoItem key ={i} todo={item}/>
                 </div>
-                <br/>
             </React.Fragment>
             
             )

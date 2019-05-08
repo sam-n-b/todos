@@ -41,6 +41,7 @@ class TodoItem extends React.Component{
             </div>
             </span>
         </div>
+        <br/>
         </React.Fragment>
 
     )
